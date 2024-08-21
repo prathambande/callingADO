@@ -20,5 +20,5 @@ steps:
 
 - checkout: self  # This ensures that the code in your repo, including the scripts, is checked out
 - script: |
-    bash ./bashFile.sh
+    ls -al
   displayName: 'Run My Bash Script'
