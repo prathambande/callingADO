@@ -29,7 +29,7 @@ jobs:
 
       - name: Check
         run: |
-          echo $env.MY_VARR
+          echo ${{env.MY_VARR}}
           
 
   job_b:
