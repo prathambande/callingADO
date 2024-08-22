@@ -30,5 +30,6 @@ jobs:
       MY_VAR: ${{needs.job_a.outputs.MY_VAR}}
     steps:
       - name: Use output variable from job_a
-        run: echo $MY_VAR
+        run: |
+          echo "Okay : $MY_VAR"
 
