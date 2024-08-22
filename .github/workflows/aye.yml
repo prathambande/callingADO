@@ -21,7 +21,9 @@ jobs:
     steps:
       - name: Set output variable
         id: setOutput
-        run: echo "MY_VAR=Hello from Job A" >> $GITHUB_OUTPUT
+        run: |
+          echo "MY_VAR=Hello from Job A" >> $GITHUB_OUTPUT
+          echo "The branch name is: ${{ variables['Build.SourceBranchName'] }}"
 
   job_b:
     runs-on: ubuntu-latest
