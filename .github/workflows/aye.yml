@@ -26,8 +26,9 @@ jobs:
   job_b:
     runs-on: ubuntu-latest
     needs: job_a
+    env:
+      MY_VAR: ${{needs.job_a.outputs.MY_VAR}}
     steps:
       - name: Use output variable from job_a
-        run: echo "Job A says: ${{needs.job_a.outputs.MY_VAR}}"
-
+        run: echo $MY_VAR
 
