@@ -25,6 +25,11 @@ jobs:
           echo "MY_VAR=Hello from Job A" >> $GITHUB_OUTPUT
           echo "The branch name is: ${{ github.head_ref }}"
           echo "The branch name is: ${{ github.ref_name }}"
+          echo "MY_VARR=sike it does work" >> $GITHUB_ENV
+
+      - name: Check
+        run: |
+          echo $env.MY_VARR
           
 
   job_b:
