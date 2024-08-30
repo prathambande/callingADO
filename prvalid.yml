@@ -1,0 +1,21 @@
+pr:
+  - main
+
+stages:
+- stage: Received
+  displayName: BOink
+  jobs:
+  - job: yo
+    steps:
+    - task: AzureCLI@2
+      displayName: Azure CLI
+      env:
+        AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
+      inputs:
+          azureSubscription: DemoAZPipe
+          scriptType: bash
+          scriptLocation: inlineScript
+          inlineScript: |
+              az --version
+              az account show
+              echo "yo new pipe ion call ado"
